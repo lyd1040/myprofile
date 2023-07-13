@@ -1,7 +1,7 @@
 <template>
     <div id="about_wrap">
         <section class="skills_wrap">
-            <h2 class="skills_text">Skills</h2>
+            <h2 class="skills_text">기술스택</h2>
 
             <div class="skills_grapy">
                 <div class="skills_items" v-for="(skill,index) in skill_list" :key="skill.text">
@@ -12,6 +12,15 @@
                     </div>
                 </div>
             </div>
+        </section>
+        
+        <section class="my_intro_wrap">
+            <h2 class="Plan_text">이런 개발자가 되고싶어요!</h2>
+            <ul class="my_goal">
+                <li>사용자 요구사항을 전부 만족시켜줄 수 있는 개발자</li>
+                <li>어떤 환경에서도 잘 동작할 수 있는 웹을 만들 수 있는 개발자</li>
+                <li>애니메이션을 활용하여 사람들의 눈을 즐겁게해줄 수 있는 개발자</li>
+            </ul>
         </section>
 
         <section class="my_card_wrap">
@@ -47,7 +56,13 @@
 
     // skills_wrap
     const skill_list =[{text:'html'},{text:'css'},{text:'js'},{text:'jqeury'},{text:'vue'}]
-    const chart_color=reactive([{width:'0%'},{width:'0%'},{width:'0%'},{width:'0%'},{width:'0%'}])
+    const chart_color=reactive([
+        {width:'0%',background:'#E96228'},
+        {width:'0%',background:'#2862E9'},
+        {width:'0%',background:'#F7D13D'},
+        {width:'0%',background:'#0864A6'},
+        {width:'0%',border:'0',borderTop:'10px solid #38475D',background:'#67AC7E'}
+    ])
 
     //my_card_wrap
     const card_contents_name = [{name:'contect'},{name:'certificate'}]
@@ -84,17 +99,15 @@
 <style scoped>
     
     .skills_wrap,
-    .my_card_wrap{
+    .my_card_wrap,
+    .my_intro_wrap{
         padding: 30px 0;
 
         border-bottom: 1px solid #d3d3d3;
     }
-
-    /******** Skill ********/
-    .skills_wrap:hover .skills_text{
-        letter-spacing: 5px;
-    }
-    .skills_wrap .skills_text{
+    
+    .skills_wrap .skills_text,
+    .my_intro_wrap .Plan_text{
         width: 80%;
 
         margin: auto;
@@ -106,6 +119,13 @@
 
         transition: 0.2s;
     }
+    
+    .skills_wrap:hover .skills_text,
+    .my_intro_wrap:hover .Plan_text{
+        letter-spacing: 5px;
+    }
+    
+    /******** Skill ********/
     .skills_items{
         width: 80%;
 
@@ -136,7 +156,35 @@
         transition-timing-function: ease-out;
     }
 
+    /****** my_intro ******/
+    .my_intro_wrap .Plan_text{
+        margin-bottom: 10px;
+    }
+    .my_intro_wrap .my_goal{
+        width: 80%;
+
+        margin: auto;
+    }
+
+    .my_intro_wrap .my_goal{
+        width: 80%;
+
+        margin: auto;
+
+        list-style-type: disc;
+    }
+
+    .my_intro_wrap .my_goal li{
+        margin: 10px 0;
+
+        transform: translateX(30px);
+    }
+
     /****** my_card ******/
+    .my_card_wrap{
+        transform: translateY(30px);
+        border-bottom: 0;
+    }
     .my_card_wrap .my_card{
         width: 60%;
 
@@ -176,7 +224,9 @@
         justify-content: end;
     }
 
+
     @media screen and (max-width:1200px) {
+        
         .skills_wrap .skills_text{
             width: 100%;
 
@@ -197,6 +247,23 @@
 
             border-right: 0;
             padding-left: 3px;
+        }
+        /* my_intro */
+        .my_card_wrap{
+            transform: translateY(0);
+        }
+        .my_intro_wrap .Plan_text{
+            text-align: center;
+        }
+        .my_intro_wrap .my_goal{
+            text-align: center;
+
+            list-style-type: none;
+        }
+        .my_intro_wrap .my_goal li{
+            text-align: center;
+
+            transform: translate(0);
         }
 
         /* my_card */
@@ -230,6 +297,12 @@
     }
 
 @media screen and (max-width:500px){
+    /* my_intro */
+    .my_intro_wrap .my_goal{
+            list-style-type: disc;
+        }
+
+    /* my_card */
     .my_card_wrap .card_contents{
         width: 100%;
 

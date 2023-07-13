@@ -3,7 +3,7 @@
     <h1>프로필</h1>
     <section class="photo-name_wrap">
         <div class="photo_wrap">
-            <img src="" alt="">
+            <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAzMjZfMjUx%2FMDAxNjc5ODM0MzkxNzg5.SomK3qflKEf0ugQ9HqeikVETiazukyq1aNgj767ZXMMg.d9xeVYIkSi5cL39Zv658_wFaZAWBjQSiApP9Dap3wdgg.PNG.npay1%2F20230326%25A3%25DF213901%25A3%25DF832.png&type=a340" alt="">
         </div>
 
         <p class="my_name">박주현</p>
@@ -13,7 +13,10 @@
         <h2 class="hobbies_text">Hobbies</h2>
 
         <div class="my_hobbies">
-            <button type="button" v-for="item in my_hobbies_arr" :key="item.hobbies">{{item.hobbies}}</button>
+            <button type="button" v-for="item in my_hobbies_arr" :key="item.hobbies">
+                <i :class="item.icon"></i>
+                <div class="hoverDiv">{{ item.hobbies }}</div>
+            </button>
         </div>
     </section>
 
@@ -43,7 +46,7 @@
 </template>
 
 <script setup>
-    const my_hobbies_arr = [{hobbies:'게임'},{hobbies:'코딩'},{hobbies:'잠'},{hobbies:'유튜브 시청'}];
+    const my_hobbies_arr = [{icon:'fas fa-gamepad',hobbies:'게임'},{icon:'fas fa-code',hobbies:'코딩'},{icon:'fas fa-bed',hobbies:'잠'},{icon:'fas fa-plane',hobbies:'여행'}];
     const education_year_arr = 
     [
         {
@@ -116,10 +119,17 @@
         width: 80%;
 
         margin: auto;
-        border: 1px solid;
+
+        display: flex;
+        justify-content: center;
     }
     .photo-name_wrap .photo_wrap img{
-        width: 100%;
+        width: 50%;
+
+    }
+    .photo-name_wrap>p{
+        width: 80%;
+        text-align: center;
     }
 
     /* 취미 */
@@ -144,12 +154,28 @@
 
         cursor: pointer;
 
-        transition: 0.15s;
+        transition: 0.3s;
+        
+        font-size: 1.5rem;
     }
     .my_hobbites_wrap .my_hobbies button:hover{
         box-shadow: 0px 0px 5px #000;
 
         color: purple;
+    }
+    .my_hobbites_wrap .my_hobbies button .hoverDiv{
+        height: 0;
+
+        overflow: hidden;
+
+        transition: 0.3s;
+
+        font-size: 0.8rem;
+    }
+    .my_hobbites_wrap .my_hobbies button:hover .hoverDiv{
+        height: auto;
+        overflow: auto;
+
     }
 
     /* 교육 */
@@ -206,6 +232,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        background: 0;
+        border: 1px solid;
+        border-radius: 50%;
+
+        transition: 0.2s;
+
+        cursor: pointer;
+    }
+    .SNS_wrap .SNS_list_wrap button:hover{
+        background: #e64a16;
+        color: #fff;
+
     }
     @media screen and (max-width:1200px) {
         .header{
