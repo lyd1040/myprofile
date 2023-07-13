@@ -34,11 +34,11 @@ const pf_arr = [
 
 const img_src = [
   {
-    src: 'assets/images/Woosuk/Woosuk_Logo_inline.png',
-    sub_img: 'assets/images/Woosuk/Woosuk_Logo_outline.png',
+    src: './images/Woosuk/Woosuk_Logo_inline.png',
+    sub_img: './images/Woosuk/Woosuk_Logo_outline.png',
   },
   {
-    src: 'assets/images/Hollys/o_logo_img.png',
+    src: './images/Hollys/o_logo_img.png',
   },
 ];
 
@@ -67,9 +67,9 @@ onMounted(() => {
 
 function handleMouseOver(index) {
   if(index ==0){
-    tiltElements[index].style.background = 'url(assets/images/Woosuk/Woosuk__.gif)';
+    tiltElements[index].style.background = 'url(./images/Woosuk/Woosuk__.gif)';
   }else{
-    tiltElements[index].style.background = 'url(assets/images/Hollys/Hollys__.gif)';
+    tiltElements[index].style.background = 'url(./images/Hollys/Hollys__.gif)';
   }
 }
 
