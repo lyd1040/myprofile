@@ -3,7 +3,9 @@
     <h1>프로필</h1>
     <section class="photo-name_wrap">
         <div class="photo_wrap">
-            <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAzMjZfMjUx%2FMDAxNjc5ODM0MzkxNzg5.SomK3qflKEf0ugQ9HqeikVETiazukyq1aNgj767ZXMMg.d9xeVYIkSi5cL39Zv658_wFaZAWBjQSiApP9Dap3wdgg.PNG.npay1%2F20230326%25A3%25DF213901%25A3%25DF832.png&type=a340" alt="">
+            <span class="img_border"></span>
+            <span class="img_border"></span>
+            <span class="my_img"></span>
         </div>
 
         <p class="my_name">박주현</p>
@@ -116,15 +118,55 @@
     }
     /* 프로필 사진 */
     .photo-name_wrap .photo_wrap{
-        width: 80%;
+        position: relative;
+        width: 160px;
+        height: 160px;
 
+        border: 1px solid ;
         margin: auto;
 
         display: flex;
         justify-content: center;
+        align-items: center;
+
+        overflow: hidden;
+        
     }
-    .photo-name_wrap .photo_wrap img{
-        width: 50%;
+    .photo-name_wrap .photo_wrap .img_border{
+        position: absolute;
+        width: 500%;
+        height: 100%;
+
+        background: linear-gradient(to top,transparent, #ddcc17, #2862E9,transparent);
+
+        z-index: -1;
+        animation: 3s rotateborder linear infinite;
+    }
+    .photo-name_wrap .photo_wrap .img_border:nth-child(2){
+        width: 100%;
+        height: 500%;
+        background: linear-gradient(to right,transparent, #38475D, #67AC7E ,transparent);
+
+        z-index: -1;
+
+        animation: 3s rotateborder linear infinite;
+    }
+    @keyframes rotateborder{
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    .photo-name_wrap .photo_wrap .my_img{
+        width: 150px;
+        height: 150px;
+
+        border: 1px solid#d3d3d3;
+        object-fit: cover;
+
+        background: url('../images/me.png') no-repeat;
+
+        background-position: 50% 35% ;
+        background-size: 130%;
 
     }
     .photo-name_wrap>p{

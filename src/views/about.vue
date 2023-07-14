@@ -326,10 +326,13 @@
         text-align: end;
 
         border-left:0;
+        border-bottom: 0;
     }
 
     .my_card_wrap .card_contents .contents_item_box .contents_item{
         font-size: 0.9em;
     }
+
+    /* my_card -> certificate */
 }
 </style>
