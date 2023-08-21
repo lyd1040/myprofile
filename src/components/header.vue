@@ -191,7 +191,7 @@
         border: 0;
         margin: 10px auto;
 
-        background: #808080;
+        background: #e96228;
         color: #fff;
 
         cursor: pointer;
@@ -203,14 +203,12 @@
     .my_hobbites_wrap .my_hobbies button:hover{
         box-shadow: 0px 0px 5px #000;
 
-        color: purple;
+        color: #2862E9;
     }
     .my_hobbites_wrap .my_hobbies button .hoverDiv{
         height: 0;
 
         overflow: hidden;
-
-        transition: 0.3s;
 
         font-size: 0.8rem;
     }
@@ -237,7 +235,7 @@
         font-weight: 700;
         font-size: 0.9em;
 
-        color: #1ba7df;
+        color: #0864a6;
     }
     .my_education_wrap .education_log_wrap .education_log .education_year::before{
         content: '*';
@@ -284,7 +282,7 @@
         cursor: pointer;
     }
     .SNS_wrap .SNS_list_wrap button:hover{
-        background: #e64a16;
+        background: #2862E9;
         color: #fff;
 
     }

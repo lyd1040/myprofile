@@ -30,6 +30,10 @@ const pf_arr = [
     name: '할리스 리뉴얼',
     href: 'https://projectteamtwo.github.io/',
   },
+  {
+    name: 'Event Calendar',
+    href: 'https://lyd1040.github.io/Calendar',
+  },
 ];
 
 const img_src = [
@@ -39,6 +43,9 @@ const img_src = [
   },
   {
     src: './images/Hollys/o_logo_img.png',
+  },
+  {
+    src:'./images/Calendar/calendar_logo.png'
   },
 ];
 
@@ -55,6 +62,12 @@ const card_style = [
     borderLeft: '3px solid #ff6565',
     backdropFilter: 'blur(3px)',
   },
+  {
+    background: '#0097ff',
+    borderTop: '2px solid #1fa5ff',
+    borderLeft: '3px solid #1fa5ff',
+    backdropFilter: 'blur(3px)',
+  },
 ];
 
 const tiltElements = reactive([]);
@@ -68,8 +81,10 @@ onMounted(() => {
 function handleMouseOver(index) {
   if(index ==0){
     tiltElements[index].style.background = 'url(./images/Woosuk/Woosuk__.gif)';
-  }else{
+  }else if(index ==1){
     tiltElements[index].style.background = 'url(./images/Hollys/Hollys__.gif)';
+  }else{
+    tiltElements[index].style.background = 'url(./images/Calendar/Calendar__.gif)';
   }
 }
 
